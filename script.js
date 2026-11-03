@@ -11,8 +11,6 @@
       el.removeAttribute("href");
       el.removeAttribute("rel");
       if (/^Open the App Store/.test(el.textContent || "")) el.textContent = "App Store — soon";
-      if (/^Get it on Google Play/.test(el.textContent || ""))
-        el.textContent = "Google Play — soon";
       if (el.classList.contains("chip")) {
         el.title = "Coming soon";
       }
