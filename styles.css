@@ -372,6 +372,18 @@ p {
   font-size: 1.05rem;
   margin-top: 18px;
 }
+.section-note {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 22px;
+}
+.section-note em {
+  color: inherit;
+  font-style: normal;
+  font-weight: 600;
+}
 .section h2 {
   margin-top: 6px;
 }

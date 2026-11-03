@@ -18,7 +18,7 @@
     <meta property="og:image" content="assets/icon.png" />
     <link rel="icon" type="image/png" href="assets/icon.png" />
     <link rel="apple-touch-icon" href="assets/icon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -306,8 +306,8 @@
           <p class="eyebrow">Download</p>
           <h2>Pick your platform.</h2>
           <p class="section-lede">
-            The desktop app is a signed installer for macOS and Windows. The mobile app brings
-            dictation and notes to your phone, with a system keyboard.
+            Installers for macOS, Windows and Android. The mobile app brings dictation and
+            notes to your phone, with a system keyboard.
           </p>
 
           <div class="grid-2 downloads">
@@ -326,7 +326,7 @@
               <a class="btn btn-primary btn-block" data-link="mac" href="#" rel="noopener"
                 >Download .dmg</a
               >
-              <p class="card-note">Universal build for Apple silicon and Intel.</p>
+              <p class="card-note">Apple silicon build. First launch: right-click the app → Open.</p>
             </article>
 
             <article class="download-card">
@@ -445,6 +445,13 @@
               </p>
             </details>
           </div>
+          <p class="section-note">
+            The installers are not signed with a paid platform certificate yet, so the first
+            launch asks for confirmation: on macOS right-click the app and choose <em>Open</em>;
+            on Windows choose <em>More info</em> then <em>Run anyway</em>. The Android build is
+            sideloaded from the APK.
+          </p>
+
         </div>
       </section>
 
@@ -500,7 +507,7 @@
       </div>
     </footer>
 
-    <script src="config.js?v=1"></script>
-    <script src="script.js?v=1"></script>
+    <script src="config.js?v=2"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>
