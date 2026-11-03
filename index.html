@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>zTalk — Private dictation, meeting notes and voice assistant</title>
+    <meta
+      name="description"
+      content="zTalk turns speech into clean text in any app, transcribes meetings on-device, and turns conversations into notes. Private by default, for macOS, Windows, iOS and Android."
+    />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:title" content="zTalk — Speak. Transcribe. Get it done." />
+    <meta
+      property="og:description"
+      content="Private voice-to-text dictation, meeting transcription and notes, by Zyeta Intelligence Lab."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/icon.png" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="zTalk home">
+          <img src="assets/logo.png" alt="zTalk" width="128" height="38" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#download">Download</a>
+          <a data-link="docs" href="#" rel="noopener">Docs</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-ghost btn-sm" data-link="docs" href="#" rel="noopener">Docs</a>
+          <a class="btn btn-primary btn-sm" href="#download">Get zTalk</a>
+        </div>
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobile-nav" hidden>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#download">Download</a>
+        <a data-link="docs" href="#" rel="noopener">Docs</a>
+        <a href="#download">Download</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+          <p class="eyebrow"><span class="dot"></span> Private by design</p>
+          <h1>
+            Your voice,<br />
+            <span class="grad">everywhere you write.</span>
+          </h1>
+          <p class="lede">
+            zTalk turns speech into clean text in any app, transcribes meetings on-device, and turns
+            conversations into notes you can search. Your audio stays yours.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" data-link="mac" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16.7 12.9c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.9-.9-3.1-.9-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-3.6-1.4-3.6-3.8zM14.3 5.6c.7-.8 1.1-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"
+                />
+              </svg>
+              Download for macOS
+            </a>
+            <a class="btn btn-outline btn-lg" data-link="windows" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 5.6 10.6 4.5v7.1H3V5.6zm8.8-1.2L21 3v8.6h-9.2V4.4zM3 12.9h7.6V20L3 18.9v-6zm8.8 0H21V21l-9.2-1.3v-6.8z"
+                />
+              </svg>
+              Download for Windows
+            </a>
+          </div>
+
+          <div class="mobile-cta-row">
+            <a class="chip" data-link="ios" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16.7 12.9c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.9-.9-3.1-.9-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-3.6-1.4-3.6-3.8zM14.3 5.6c.7-.8 1.1-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"
+                />
+              </svg>
+              iPhone &amp; iPad
+            </a>
+            <a class="chip" data-link="android" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 9h10v8.2a1.8 1.8 0 0 1-1.8 1.8H8.8A1.8 1.8 0 0 1 7 17.2V9zm-2.6.4a1.4 1.4 0 1 1 1.4 1.4V16a1.4 1.4 0 0 1-2.8 0v-5.2a1.4 1.4 0 0 1 1.4-1.4zm15.2 0a1.4 1.4 0 0 1 1.4 1.4V16a1.4 1.4 0 0 1-2.8 0v-5.2a1.4 1.4 0 0 1 1.4-1.4zM8.6 4.8l-.9-1.5a.4.4 0 0 1 .7-.4l.9 1.6a6.4 6.4 0 0 1 5.4 0l.9-1.6a.4.4 0 0 1 .7.4l-.9 1.5A5.4 5.4 0 0 1 18 8.4H6a5.4 5.4 0 0 1 2.6-3.6zM9.5 6.6a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4zm5 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"
+                />
+              </svg>
+              Android
+            </a>
+          </div>
+
+          <p class="fineprint">
+            Free to start · No credit card · macOS 12+, Windows 10+, iOS 17+, Android 10+
+          </p>
+        </div>
+
+        <div class="wrap hero-shot">
+          <div class="shot-frame">
+            <img
+              src="assets/assistant-preview.webp"
+              alt="Dictating an email into a mail window with the zTalk voice pill"
+              width="1128"
+              height="676"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust strip -->
+      <section class="strip" aria-label="Why zTalk">
+        <div class="wrap strip-grid">
+          <div>
+            <strong>On-device by default</strong><span>Audio never has to leave your computer</span>
+          </div>
+          <div>
+            <strong>Your models, your keys</strong
+            ><span>Local, your cloud provider, or your own server</span>
+          </div>
+          <div>
+            <strong>Nothing trains on you</strong
+            ><span>No advertising profile, no model training</span>
+          </div>
+          <div>
+            <strong>Works offline</strong><span>Dictate and transcribe with no connection</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy -->
+      <section class="section" id="privacy">
+        <div class="wrap">
+          <p class="eyebrow">Privacy</p>
+          <h2>Your data stays yours.</h2>
+          <p class="section-lede">
+            zTalk is built the other way round: processing happens where your words already are. The
+            cloud is an option you turn on, not a default you opt out of.
+          </p>
+
+          <div class="grid-3">
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="10" width="16" height="10" rx="2" />
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+                </svg>
+              </span>
+              <h3>Your voice stays on your device</h3>
+              <p>
+                Speech recognition runs locally with whisper.cpp and Parakeet. Recordings, models
+                and transcripts are files on your machine — not an upload queue.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16M4 12h10M4 17h7" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+              </span>
+              <h3>Cloud only when you choose it</h3>
+              <p>
+                Point zTalk at OpenAI, Anthropic, Gemini, Groq, Azure, Bedrock, your own gateway or
+                the zTalk service. Switch per feature, not per app.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="8" />
+                  <path d="M5 5l14 14" />
+                </svg>
+              </span>
+              <h3>Nothing trains on your words</h3>
+              <p>
+                No advertising profile, no model training on your audio, and no analytics SDKs.
+                Diagnostics are opt-in and off by default.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section section-tint" id="features">
+        <div class="wrap">
+          <p class="eyebrow">What you get</p>
+          <h2>One tool for talking, writing and remembering.</h2>
+          <p class="section-lede">
+            Dictation is the front door. Behind it: translation, an assistant that edits what you
+            selected, meeting notes with speakers, and a searchable archive of everything said.
+          </p>
+
+          <div class="grid-3 features">
+            <article class="feature">
+              <h3>Dictation anywhere</h3>
+              <p>
+                Hold a key, speak, release. Clean text lands at the cursor in any app — no
+                copy-paste.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Translation hotkey</h3>
+              <p>Speak in one language, paste in another, with the same one-key flow.</p>
+            </article>
+            <article class="feature">
+              <h3>Voice assistant</h3>
+              <p>
+                Say what you want done. Selected text is edited in place, or the answer is pasted
+                where you type.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Meeting notes</h3>
+              <p>
+                Zoom, Teams and FaceTime are detected automatically. Record, transcribe and
+                summarise with speaker labels.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Speaker identification</h3>
+              <p>
+                On-device diarization and voice fingerprints label who said what across meetings.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Notes that stay searchable</h3>
+              <p>
+                Folders, semantic search, sharing and AI actions over every transcript you keep.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Team spaces</h3>
+              <p>
+                Shared notes, roles and membership enforced by the server, with org-wide policy.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Import audio and video</h3>
+              <p>
+                Drop in files or paste a media URL, batch transcribe, and detect speakers
+                automatically.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>API and MCP</h3>
+              <p>
+                Automate notes and transcripts, or connect Claude, ChatGPT and Cursor to your
+                archive.
+              </p>
+            </article>
+          </div>
+
+          <div class="split">
+            <div class="split-copy">
+              <h3>Local when privacy matters. Cloud when speed does.</h3>
+              <p>
+                The same pipeline runs either way: microphone, voice activity detection, model,
+                cleanup, paste. Choose per task — offline dictation with a local model, cloud
+                meetings for a long call, or your own inference server.
+              </p>
+              <ul class="checks">
+                <li>GPU acceleration on Metal, CUDA and Vulkan</li>
+                <li>Automatic fallback when a provider is unavailable</li>
+                <li>Custom vocabulary, snippets and tone styles</li>
+                <li>Enterprise Bedrock, Azure OpenAI and Vertex access</li>
+              </ul>
+            </div>
+            <figure class="split-art">
+              <img
+                src="assets/meeting-detected.webp"
+                alt="zTalk detecting a meeting and offering to transcribe it"
+                width="419"
+                height="505"
+                loading="lazy"
+              />
+              <figcaption>A call is detected — one click starts notes.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download -->
+      <section class="section" id="download">
+        <div class="wrap">
+          <p class="eyebrow">Download</p>
+          <h2>Pick your platform.</h2>
+          <p class="section-lede">
+            The desktop app is a signed installer for macOS and Windows. The mobile app brings
+            dictation and notes to your phone, with a system keyboard.
+          </p>
+
+          <div class="grid-2 downloads">
+            <article class="download-card">
+              <div class="platform-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M16.7 12.9c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.9-.9-3.1-.9-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-3.6-1.4-3.6-3.8zM14.3 5.6c.7-.8 1.1-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"
+                  />
+                </svg>
+                <div>
+                  <h3>macOS</h3>
+                  <p>Apple silicon · macOS 12+</p>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block" data-link="mac" href="#" rel="noopener"
+                >Download .dmg</a
+              >
+              <p class="card-note">Universal build for Apple silicon and Intel.</p>
+            </article>
+
+            <article class="download-card">
+              <div class="platform-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M3 5.6 10.6 4.5v7.1H3V5.6zm8.8-1.2L21 3v8.6h-9.2V4.4zM3 12.9h7.6V20L3 18.9v-6zm8.8 0H21V21l-9.2-1.3v-6.8z"
+                  />
+                </svg>
+                <div>
+                  <h3>Windows</h3>
+                  <p>Windows 10 and 11 · x64</p>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block" data-link="windows" href="#" rel="noopener"
+                >Download .exe</a
+              >
+              <p class="card-note">64-bit installer for Windows 10 and 11.</p>
+            </article>
+
+            <article class="download-card">
+              <div class="platform-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M16.7 12.9c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.9-.9-3.1-.9-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-3.6-1.4-3.6-3.8zM14.3 5.6c.7-.8 1.1-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"
+                  />
+                </svg>
+                <div>
+                  <h3>iPhone &amp; iPad</h3>
+                  <p>iOS 17+ · dictation keyboard included</p>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block" data-link="ios" href="#" rel="noopener"
+                >Open the App Store</a
+              >
+              <p class="card-note">Dictate from any text field with the zTalk keyboard.</p>
+            </article>
+
+            <article class="download-card">
+              <div class="platform-head">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 9h10v8.2a1.8 1.8 0 0 1-1.8 1.8H8.8A1.8 1.8 0 0 1 7 17.2V9zm-2.6.4a1.4 1.4 0 1 1 1.4 1.4V16a1.4 1.4 0 0 1-2.8 0v-5.2a1.4 1.4 0 0 1 1.4-1.4zm15.2 0a1.4 1.4 0 0 1 1.4 1.4V16a1.4 1.4 0 0 1-2.8 0v-5.2a1.4 1.4 0 0 1 1.4-1.4zM8.6 4.8l-.9-1.5a.4.4 0 0 1 .7-.4l.9 1.6a6.4 6.4 0 0 1 5.4 0l.9-1.6a.4.4 0 0 1 .7.4l-.9 1.5A5.4 5.4 0 0 1 18 8.4H6a5.4 5.4 0 0 1 2.6-3.6zM9.5 6.6a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4zm5 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"
+                  />
+                </svg>
+                <div>
+                  <h3>Android</h3>
+                  <p>Android 10+ · on-device or cloud</p>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block" data-link="android" href="#" rel="noopener"
+                >Get it on Google Play</a
+              >
+              <p class="card-note">Direct APK download. Google Play listing pending.</p>
+            </article>
+          </div>
+
+          <p class="download-foot">
+            Prefer a package?
+            <a data-link="releases" href="#" rel="noopener">All releases</a> include `.deb`, `.rpm`,
+            `.AppImage` and `.tar.gz` builds for Linux.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section-tint" id="faq">
+        <div class="wrap narrow">
+          <p class="eyebrow">Common questions</p>
+          <h2>Answers before you install.</h2>
+
+          <div class="faq">
+            <details>
+              <summary>Is my audio uploaded?</summary>
+              <p>
+                Only if you choose a cloud mode. Local dictation, local meetings and local cleanup
+                run on your machine; you can verify it by disconnecting from the network.
+              </p>
+            </details>
+            <details>
+              <summary>Can I use my own API keys?</summary>
+              <p>
+                Yes. Add keys for OpenAI, Anthropic, Gemini, Groq, Mistral, OpenRouter, xAI,
+                Deepgram, AssemblyAI, Corti or a custom OpenAI-compatible endpoint, or point zTalk
+                at your own self-hosted server.
+              </p>
+            </details>
+            <details>
+              <summary>Which languages are supported?</summary>
+              <p>
+                Dictation covers the languages of the local model you choose — zVoice and Whisper
+                are multilingual, Parakeet and Cohere cover their own sets. The interface is
+                translated into 11 languages.
+              </p>
+            </details>
+            <details>
+              <summary>What is zVoice?</summary>
+              <p>
+                zVoice is our streaming and offline speech model. It transcribes while you talk,
+                returns one clean transcript on release, and can also run fully on-device.
+              </p>
+            </details>
+            <details>
+              <summary>Does it work with my meeting app?</summary>
+              <p>
+                zTalk detects Zoom, Teams, FaceTime, Webex and browser calls. It captures system
+                audio locally and labels speakers, so the other participants are not recorded
+                separately or joined by a bot.
+              </p>
+            </details>
+            <details>
+              <summary>Is zTalk open source?</summary>
+              <p>
+                zTalk is proprietary software by Zyeta Intelligence Lab. It is not open
+                source, and no part of it may be redistributed without written permission.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="wrap cta-inner">
+          <img src="assets/mark.png" alt="" width="64" height="53" aria-hidden="true" />
+          <h2>Speak. Transcribe. Get it done.</h2>
+          <p>Install zTalk and dictate your next sentence in under a minute.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" data-link="mac" href="#" rel="noopener"
+              >Download for macOS</a
+            >
+            <a class="btn btn-outline btn-lg" data-link="windows" href="#" rel="noopener"
+              >Download for Windows</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="zTalk" width="128" height="38" />
+          <p>Private dictation, meeting notes and voice assistance by Zyeta Intelligence Lab.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#download">Download</a>
+          <a data-link="releases" href="#" rel="noopener">Release notes</a>
+          <a data-link="docs" href="#" rel="noopener">Documentation</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a data-link="docs" href="#" rel="noopener">Help centre</a>
+          <a data-link="docs" href="#" rel="noopener">API reference</a>
+          <a href="#download">Downloads</a>
+          <a data-link="status" href="#" rel="noopener">Status</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a data-link="contact" href="#">Contact</a>
+          <a data-link="sales" href="#">Sales</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#faq">Security</a>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>© <span id="year">2026</span> Zyeta Intelligence Lab. All rights reserved.</p>
+        <p class="footer-legal">zTalk is proprietary software of Zyeta Intelligence Lab.</p>
+      </div>
+    </footer>
+
+    <script src="config.js?v=1"></script>
+    <script src="script.js?v=1"></script>
+  </body>
+</html>
