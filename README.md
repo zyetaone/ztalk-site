@@ -1,61 +1,61 @@
-# zTalk website
+# zTalk site and downloads
 
-Static marketing site for zTalk. Structure mirrors a modern dictation landing page:
-hero, privacy, features, platform downloads, FAQ, CTA and footer. All copy and
-artwork are zTalk's; no files are loaded from another site.
+This repository serves two things, and they belong together:
 
-## Run locally
+1. The **public website and documentation** at
+   <https://zyetaone.github.io/ztalk-site/>.
+2. Every **installer and update file** that people download, held in this
+   repository's Releases.
 
-```bash
-cd website
-python3 -m http.server 4173
-# http://localhost:4173
-```
+It is public because GitHub needs a public repository for anonymous downloads
+and for Pages. The application source lives in
+[`zyetaone/ztalk`](https://github.com/zyetaone/ztalk).
 
-Any static host works (Vercel, Netlify, Cloudflare Pages, S3, nginx). There is no
-build step and no client-side framework.
-
-## Set the download links
-
-Edit `config.js` — every button reads from it:
-
-```js
-window.ZTALK_LINKS = {
-  mac: "https://…/zTalk-1.0.0-arm64.dmg",
-  windows: "https://…/zTalk-1.0.0-win-x64.exe",
-  releases: "#download",
-  ios: "",     // paste the App Store URL when live
-  android: "", // paste the Google Play URL when live
-  ...
-};
-```
-
-An empty `ios` value renders the button as **App Store — soon** instead of
-linking nowhere. Installer URLs are the exact files on the download host.
-
-### Installer files
-
-`config.js` points at the exact hosted files:
+## Layout
 
 ```
-zTalk-1.0.0-arm64.dmg
-zTalk-1.0.0-win-x64.exe
-zTalk-1.0.0-android.apk
+index.html      download page
+styles.css      styles for the page and the docs
+script.js       behaviour for the page
+config.js       every external link in one place
+assets/         images and fonts
+docs/           documentation site, served at /docs/
 ```
 
-Update the version in those URLs on every release.
+## Releases
 
-## Deploy
+Each product version is one release, tagged `v<version>`, for example `v1.0.12`.
+Release asset names never change between versions, so a link keeps working:
 
-- **Vercel/Netlify/Cloudflare Pages**: set the project root to `website`, no build command, output `.`.
-- **Any web server**: copy the `website/` directory as-is.
+| File | Platform |
+| --- | --- |
+| `zTalk-mac-arm64.dmg` | macOS installer |
+| `zTalk-mac-arm64.zip` | macOS payload for the in-app update |
+| `latest-mac.yml` | update metadata the macOS app reads |
+| `zTalk-win-x64.exe` | Windows installer |
+| `latest.yml` | update metadata the Windows app reads |
+| `zTalk-<version>-android.apk` | Android package |
 
-Point `ztalk.zyeta.ai` at the deployment and update `zyetaone.github.io/ztalk-site/docs` separately
-(the docs site is a different service).
+Runtime helper binaries sit in their own releases: `runtime-0.0.11`,
+`meeting-aec-helper-v1.0.0`, `windows-*` helpers, and `linux-text-monitor-*`.
 
-## Notes
+The installed apps poll `releases/latest` here every four hours. A new release
+therefore reaches every user without a website change.
 
-- No analytics, cookies, external fonts or third-party scripts.
-- Fonts are the system stack; images are local WebP/PNG.
-- `assets/` is generated from the app's brand files — replace them together when
-  the logo changes.
+## Change the website
+
+The website source lives in `apps/website` of the application repository. Copy
+it here, commit, and GitHub Pages rebuilds.
+
+```sh
+rsync -a --exclude=.git ../ztalk/apps/website/ ./
+git add -A && git commit -m "Website: <change>" && git push
+```
+
+## Check before you publish
+
+1. Open the site. Every download button must resolve. Each link points into
+   `releases/download/...`.
+2. Confirm the newest release has `latest-mac.yml` for macOS and `latest.yml` for
+   Windows.
+3. Confirm each installer matches the checksum in its metadata file.
