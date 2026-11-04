@@ -50,7 +50,7 @@ Update the version in those URLs on every release.
 - **Vercel/Netlify/Cloudflare Pages**: set the project root to `website`, no build command, output `.`.
 - **Any web server**: copy the `website/` directory as-is.
 
-Point `ztalk.zyeta.ai` at the deployment and update `docs.ztalk.zyeta.ai` separately
+Point `ztalk.zyeta.ai` at the deployment and update `zyetaone.github.io/ztalk-site/docs` separately
 (the docs site is a different service).
 
 ## Notes

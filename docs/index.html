@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>zTalk documentation</title>
+    <meta
+      name="description"
+      content="How to install zTalk, grant the permissions it needs, dictate, transcribe meetings, and fix auto-paste."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body class="docs-body">
+    <a class="skip" href="#content">Skip to content</a>
+
+    <header class="site-header docs-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="../index.html" aria-label="zTalk home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-word">zTalk</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html#features">Features</a>
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#download">Download</a>
+          <a href="./" aria-current="page">Docs</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-primary btn-sm" href="../index.html#download">Get zTalk</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="docs-layout wrap">
+      <aside class="docs-nav" aria-label="Documentation">
+        <p class="docs-nav-title">Documentation</p>
+        <a href="#install">Install</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#auto-paste">Auto-paste</a>
+        <a href="#dictation">Dictation</a>
+        <a href="#languages">Languages</a>
+        <a href="#meetings">Meetings and notes</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#models">Models</a>
+        <a href="#updates">Updates</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#admin">For administrators</a>
+      </aside>
+
+      <main id="content" class="docs-content">
+        <p class="eyebrow">Documentation</p>
+        <h1>zTalk documentation</h1>
+        <p class="section-lede">
+          Everything needed to install zTalk, get dictation pasting by itself, and run meetings,
+          notes and integrations. zTalk is internal software for Zyeta: every feature is included,
+          there are no plans, no licences to buy and no trial limits.
+        </p>
+
+        <section id="install">
+          <h2>Install</h2>
+
+          <h3>macOS (Apple silicon)</h3>
+          <ol>
+            <li>Download the <code>.dmg</code> from the download page.</li>
+            <li>Open it and drag <strong>zTalk</strong> into <strong>Applications</strong>.</li>
+            <li>
+              The build is signed ad hoc, not notarised, so the first launch needs
+              <strong>right-click → Open</strong> once. Gatekeeper then stops asking.
+            </li>
+            <li>Grant the two permissions below before the first dictation.</li>
+          </ol>
+
+          <h3>Windows 10 and 11 (x64)</h3>
+          <ol>
+            <li>Run <code>zTalk-win-x64.exe</code>.</li>
+            <li>SmartScreen: <strong>More info → Run anyway</strong>.</li>
+            <li>It installs per user and starts automatically; no administrator rights needed.</li>
+          </ol>
+
+          <h3>Android 10 and newer</h3>
+          <ol>
+            <li>Copy the <code>.apk</code> to the phone and tap it.</li>
+            <li>Allow installing from this source when Android asks.</li>
+            <li>Set zTalk as the keyboard when onboarding offers it.</li>
+          </ol>
+        </section>
+
+        <section id="permissions">
+          <h2>Permissions</h2>
+          <p>
+            zTalk has no way around these two grants; macOS enforces them for any app that listens
+            or types on your behalf.
+          </p>
+
+          <h3>Microphone</h3>
+          <p>
+            Asked on the first dictation. Without it zTalk records nothing, and the audio meter in
+            the panel stays flat.
+          </p>
+
+          <h3>Accessibility</h3>
+          <p>
+            Needed to insert text into other apps. Without it zTalk still transcribes and copies the
+            text, but it cannot paste, so you would press ⌘V yourself.
+          </p>
+          <ol>
+            <li>Open <strong>System Settings → Privacy &amp; Security → Accessibility</strong>.</li>
+            <li>
+              If <strong>zTalk</strong> is listed, switch it on. If it is not, click <strong>+</strong>
+              at the bottom of the list, choose <strong>Applications → zTalk</strong> and open it.
+              Dragging the app into the list from Finder works too.
+            </li>
+            <li>Quit zTalk completely from the menu bar and reopen it.</li>
+          </ol>
+          <p class="callout">
+            Each macOS build is signed with its own identity, so an update can reset this grant.
+            After installing a new version, check that zTalk is still switched on in that list.
+          </p>
+        </section>
+
+        <section id="auto-paste">
+          <h2>Auto-paste: make dictation fill the field</h2>
+          <p>
+            When everything is right, you press the hotkey, speak, press it again, and the text
+            appears at the cursor in whatever app you were using.
+          </p>
+
+          <h3>If the text lands in the clipboard but not in the field</h3>
+          <ol>
+            <li>
+              <strong>Check Accessibility.</strong> Settings → Privacy &amp; Data in zTalk shows the
+              live state; it must read “Granted”. Granting it while zTalk is running is not enough —
+              quit and reopen the app.
+            </li>
+            <li>
+              <strong>Remove stale entries.</strong> If Accessibility lists more than one zTalk, or
+              an “Electron” entry, remove them with <strong>−</strong>, add
+              <code>/Applications/zTalk.app</code> again and restart.
+            </li>
+            <li>
+              <strong>Run it from Applications.</strong> If you launched zTalk from the mounted disk
+              image, macOS ties the grant to that temporary path. Move the app to Applications
+              first.
+            </li>
+            <li>
+              <strong>Keep AI cleanup off unless a model is configured.</strong> Cleanup on with no
+              model produces a “Cleanup failed” card; the raw transcript still goes out, but the
+              card is noise. Settings → AI Models → Dictation Cleanup.
+            </li>
+          </ol>
+          <p>
+            A refused paste is recorded in zTalk's log, which is the fastest way to tell a missing
+            permission apart from a focus problem. Ask IT for the log if the steps above do not fix
+            it.
+          </p>
+        </section>
+
+        <section id="dictation">
+          <h2>Dictation</h2>
+          <ul>
+            <li>
+              <strong>Dictation hotkey</strong> — press once to start, once to stop. The text is
+              pasted at the cursor, or copied when no writable field has focus.
+            </li>
+            <li>
+              <strong>Translation hotkey</strong> — dictate in one language, paste in another. Pick
+              both in Settings → Hotkeys.
+            </li>
+            <li>
+              <strong>Voice assistant hotkey</strong> — sends what you say to your AI assistant as a
+              command; highlighted text is edited in place.
+            </li>
+            <li>
+              <strong>Panel</strong> — the floating control panel starts and stops dictation by
+              click, and shows the live transcript. It stays click-through except where there is a
+              control.
+            </li>
+          </ul>
+        </section>
+
+        <section id="languages">
+          <h2>Languages</h2>
+          <p>
+            zTalk ships 69 languages. Indian languages supported by the local Whisper models:
+          </p>
+          <table>
+            <thead>
+              <tr><th>Language</th><th>Code</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Hindi</td><td>hi</td><td>Handles Hinglish without translating it</td></tr>
+              <tr><td>Bengali</td><td>bn</td><td>Whisper</td></tr>
+              <tr><td>Kannada</td><td>kn</td><td>Whisper</td></tr>
+              <tr><td>Telugu</td><td>te</td><td>Whisper</td></tr>
+              <tr><td>Tamil</td><td>ta</td><td>Whisper</td></tr>
+              <tr><td>Marathi</td><td>mr</td><td>Whisper</td></tr>
+              <tr><td>Gujarati</td><td>gu</td><td>Whisper</td></tr>
+              <tr><td>Malayalam</td><td>ml</td><td>Whisper</td></tr>
+              <tr><td>Punjabi</td><td>pa</td><td>Whisper</td></tr>
+              <tr><td>Odia</td><td>or</td><td>Whisper</td></tr>
+              <tr><td>Assamese</td><td>as</td><td>Whisper</td></tr>
+              <tr><td>Urdu</td><td>ur</td><td>Whisper</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Parakeet and zVoice weights are trained on English and European languages, so the picker
+            only offers the languages a provider actually supports. For Indian languages use Whisper.
+          </p>
+        </section>
+
+        <section id="meetings">
+          <h2>Meetings and notes</h2>
+          <ul>
+            <li>
+              zTalk detects Zoom, Teams and FaceTime calls and starts transcribing them without
+              joining as a participant.
+            </li>
+            <li>Speaker diarization and voice fingerprints run locally, so names stay on the device.</li>
+            <li>Notes support folders, semantic search, sharing and AI actions.</li>
+            <li>Calendar integration links meetings to events (see below).</li>
+          </ul>
+        </section>
+
+        <section id="integrations">
+          <h2>Integrations</h2>
+          <table>
+            <thead>
+              <tr><th>Integration</th><th>State</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Microsoft 365 / Outlook calendar</td><td>Available</td><td>Reads meetings from Outlook and Microsoft 365</td></tr>
+              <tr><td>Google Calendar</td><td>Available</td><td>Reads meetings from Google Calendar</td></tr>
+              <tr><td>Apple Calendar</td><td>Available</td><td>Reads Calendar.app locally</td></tr>
+              <tr><td>Gmail</td><td>Available</td><td>Drafts and sends mail from the assistant</td></tr>
+              <tr><td>Slack, Linear, GitHub</td><td>Available</td><td>Assistant connectors</td></tr>
+              <tr><td>Zoho Mail and Calendar</td><td>Not built yet</td><td>Needs a Zoho OAuth client from your Zoho console</td></tr>
+              <tr><td>Outlook mail</td><td>Not built yet</td><td>Needs an Azure app registration with Mail permissions</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Sign-in is Zoho only and is being configured for the organisation. Until it is live, use
+            “Continue without an account”; every feature works offline.
+          </p>
+        </section>
+
+        <section id="models">
+          <h2>Models</h2>
+          <ul>
+            <li><strong>Whisper</strong> — 99 languages, runs locally on CPU, Metal, CUDA or Vulkan.</li>
+            <li><strong>NVIDIA Parakeet</strong> — fast English transcription.</li>
+            <li><strong>zVoice</strong> — multilingual model for dictation on weaker hardware.</li>
+            <li><strong>Cohere Transcribe</strong> — multilingual alternative.</li>
+            <li><strong>zTalk Cloud</strong> — optional; nothing is sent unless you choose it.</li>
+          </ul>
+          <p>Models download once and are stored in <code>~/.cache/ztalk</code> on macOS and Linux.</p>
+        </section>
+
+        <section id="updates">
+          <h2>Updates</h2>
+          <p>
+            zTalk checks for updates at launch and every four hours. When one is available the app
+            offers it; macOS verifies the download against the published checksum and replaces the
+            bundle itself, Windows runs the installer on quit.
+          </p>
+          <p>
+            Because macOS builds are signed ad hoc, an update can reset the Accessibility grant.
+            Re-check that step after a version change.
+          </p>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+
+          <h3>No text appears, but the transcript was saved</h3>
+          <p>That is the Accessibility grant; see <a href="#auto-paste">auto-paste</a>.</p>
+
+          <h3>“Cleanup failed — AI cleanup is on, but no cleanup model is set up”</h3>
+          <p>
+            Cleanup needs a language model. Either configure one under Settings → AI Models, or turn
+            cleanup off. Your dictation works either way.
+          </p>
+
+          <h3>The microphone meter stays flat</h3>
+          <p>
+            The microphone permission was denied. System Settings → Privacy &amp; Security →
+            Microphone → enable zTalk, then restart it.
+          </p>
+
+          <h3>zTalk opens with “damaged” instead of “unidentified developer”</h3>
+          <p>
+            That build was signed incorrectly. Download the current installer again; releases are
+            re-signed so they open.
+          </p>
+        </section>
+
+        <section id="admin">
+          <h2>For administrators</h2>
+          <ul>
+            <li>
+              Installers and update metadata are published to the public
+              <code>zyetaone/ztalk-downloads</code> repository, so installed copies update without a
+              token.
+            </li>
+            <li>Source and release pipeline live in <code>zyetaone/ztalk</code> (private).</li>
+            <li>
+              A version tag builds macOS and Windows and publishes the installers; Android is built
+              locally. Publishing from CI needs the <code>ZTALK_DOWNLOAD_TOKEN</code> secret.
+            </li>
+            <li>
+              To move downloads to your own storage (R2, S3, a CDN), the only change is the download
+              host in the site config and the updater feed.
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© <span id="year">2026</span> Zyeta Intelligence Lab. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="../index.html#download">Download</a>
+          <a href="./">Docs</a>
+          <a href="mailto:support@ztalk.zyeta.ai">Support</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=3"></script>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
