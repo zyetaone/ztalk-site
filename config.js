@@ -6,7 +6,7 @@
  */
 window.ZTALK_LINKS = {
   // Installers published for this site.
-  mac: "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.12/zTalk-mac-arm64.dmg",
+  mac: "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.13/zTalk-mac-arm64.dmg",
   windows:
     "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.8/zTalk-win-x64.exe",
   releases: "#download",
