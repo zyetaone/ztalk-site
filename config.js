@@ -14,7 +14,7 @@ window.ZTALK_LINKS = {
   // Mobile stores: paste the listing URLs when the apps are approved.
   ios: "",
   android:
-    "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.10/zTalk-1.0.10-android.apk",
+    "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.14/zTalk-1.0.14-android.apk",
 
   docs: "https://zyetaone.github.io/ztalk-site/docs/",
   contact: "mailto:support@ztalk.zyeta.ai",
