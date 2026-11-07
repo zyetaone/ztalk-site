@@ -6,7 +6,7 @@
  */
 window.ZTALK_LINKS = {
   // Installers published for this site.
-  mac: "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.22/zTalk-mac-arm64.dmg",
+  mac: "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.23/zTalk-mac-arm64.dmg",
   windows:
     "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.8/zTalk-win-x64.exe",
   releases: "#download",
@@ -14,7 +14,7 @@ window.ZTALK_LINKS = {
   // Mobile stores: paste the listing URLs when the apps are approved.
   ios: "",
   android:
-    "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.22/zTalk-1.0.22-android.apk",
+    "https://github.com/zyetaone/ztalk-site/releases/download/v1.0.23/zTalk-1.0.23-android.apk",
 
   docs: "https://zyetaone.github.io/ztalk-site/docs/",
   contact: "mailto:support@ztalk.zyeta.ai",
