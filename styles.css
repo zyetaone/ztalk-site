@@ -115,7 +115,7 @@ p {
 }
 
 .brand img {
-  width: 118px;
+  width: 132px;
   height: auto;
 }
 
@@ -650,7 +650,7 @@ p {
   gap: 32px;
 }
 .footer-brand img {
-  width: 118px;
+  width: 132px;
 }
 .footer-brand p {
   color: var(--muted-2);
